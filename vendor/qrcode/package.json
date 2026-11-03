@@ -1,0 +1,9 @@
+﻿{
+  "name": "qrcode-core-vendored",
+  "version": "1.5.4",
+  "private": true,
+  "description": "qrcode 的纯编码核心（MIT, (c) 2012 Ryan Day），原样 vendored 进来，避免 DSH 升级后路径变化。",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "./lib/core/qrcode.js"
+}

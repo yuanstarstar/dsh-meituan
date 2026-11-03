@@ -1,0 +1,9 @@
+# 插件运行时数据（登录态/缓存/二维码，绝不入库）
+data/
+# 依赖与构建产物
+node_modules/
+dist/
+*.log
+__pycache__/
+.DS_Store
+Thumbs.db

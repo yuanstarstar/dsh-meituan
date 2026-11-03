@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "DSH 点餐桥",
+  "version": "0.6.0",
+  "description": "让 DSH 通过你本人正在用的浏览器读外卖页面（美团外卖 / 京东秒送）：页面内注入，不用远程调试端口、不跑无头浏览器。",
+  "permissions": [
+    "tabs",
+    "storage",
+    "cookies",
+    "browsingData",
+    "scripting",
+    "alarms",
+    "debugger"
+  ],
+  "host_permissions": [
+    "https://h5.waimai.meituan.com/*",
+    "https://i.waimai.meituan.com/*",
+    "https://waimai.meituan.com/*",
+    "https://*.jd.com/*",
+    "https://*.jddj.com/*",
+    "https://*.360buyimg.com/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://h5.waimai.meituan.com/*",
+        "https://*.jd.com/*",
+        "https://*.jddj.com/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://h5.waimai.meituan.com/*",
+        "https://*.jd.com/*",
+        "https://*.jddj.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_title": "DSH 点餐桥"
+  }
+}

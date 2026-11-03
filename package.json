@@ -1,0 +1,43 @@
+{
+  "name": "@local/dsh-meituan",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "外卖点餐助手（京东秒送 / 美团外卖）：不知道吃什么时，让 DSH 翻附近商家、按你的口味挑一家，还能把餐点到结算页等你付款。",
+  "license": "MIT",
+  "main": "./host.js",
+  "exports": {
+    ".": "./host.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "host.js",
+    "client.js",
+    "lib/*.js",
+    "extension/**",
+    "vendor/**",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh-plugin",
+    "takeout",
+    "jd",
+    "meituan"
+  ]
+}

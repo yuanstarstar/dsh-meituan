@@ -1,0 +1,9 @@
+﻿{
+  "name": "dijkstrajs-vendored",
+  "version": "1.0.3",
+  "private": true,
+  "description": "qrcode 的 segments 模块用到的 dijkstra（MIT, (c) 2018 Darryl Pogue），原样 vendored。",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "./dijkstra.js"
+}
